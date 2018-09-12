@@ -70,7 +70,7 @@ import com.kuka.roboticsAPI.motionModel.controlModeModel.JointImpedanceControlMo
 
 // The TCP driver as robot application class
 // Port and simulation options can be configured through the Process data directly in the pad
-public class ROS_driver_v2 extends RoboticsAPIApplication {
+public class ROS_driver extends RoboticsAPIApplication {
 	
 	public enum RobotMode {unknown, normal, impedance, smart, direct} // robot behaviour differs between modes
 	
@@ -109,7 +109,7 @@ public class ROS_driver_v2 extends RoboticsAPIApplication {
 	
 	public void initialize() {
 		controller = (SunriseController) getContext().getDefaultController();
-		robot = (LBR) getRobot(controller, "LBR_iiwa_7_R800_1");
+		robot = (LBR) getRobot(controller, "LBR_iiwa_14_R820_1");
 		tool = createFromTemplate("Tool");
 		tool.attachTo(robot.getFlange()); // Attach the tool
 	}
